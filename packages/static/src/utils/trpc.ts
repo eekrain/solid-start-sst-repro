@@ -1,5 +1,7 @@
 // utils/trpc.ts
 import { createTRPCReact } from "@trpc/react-query";
-import type { AppRouter } from "@personal-branding/functions/simple";
+import type { SimpleRouter } from "@personal-branding/functions/simple";
+import type { MultiRouter } from "@personal-branding/functions/trpc/router/_app";
 
-export const trpc = createTRPCReact<AppRouter>();
+export const trpcSimple = createTRPCReact<SimpleRouter>();
+export const trpcMulti = createTRPCReact<MultiRouter>();
