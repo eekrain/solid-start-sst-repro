@@ -1,4 +1,4 @@
-import { StackContext, Api, SolidStartSite } from "sst/constructs";
+import { StackContext, Api, AstroSite } from "sst/constructs";
 
 export function API({ stack }: StackContext) {
   const api = new Api(stack, "api", {
@@ -7,8 +7,9 @@ export function API({ stack }: StackContext) {
     },
   });
 
-  const site = new SolidStartSite(stack, "Site", {
+  const site = new AstroSite(stack, "Site", {
     path: "packages/frontend",
+    edge: true,
   });
 
   stack.addOutputs({
