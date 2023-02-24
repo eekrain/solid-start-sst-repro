@@ -1,10 +1,8 @@
-import { router } from "../root";
+import { router } from "../utils";
 import { userRouter } from "./user";
-import { postRouter } from "./post";
+import { utilRouter } from "./util";
 
 export const multiRouter = router({
   user: userRouter,
-  post: postRouter,
+  util: utilRouter,
 });
-
-export type MultiRouter = typeof multiRouter;

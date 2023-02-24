@@ -4,8 +4,8 @@ export function API({ stack }: StackContext) {
   const api = new Api(stack, "api", {
     routes: {
       "GET /": "packages/functions/src/lambda.handler",
-      "GET /trpc/{proxy+}": "packages/functions/src/trpc/root.handler",
-      "POST /trpc/{proxy+}": "packages/functions/src/trpc/root.handler",
+      "GET /trpc/{proxy+}": "packages/functions/src/trpc/lambda.handler",
+      "POST /trpc/{proxy+}": "packages/functions/src/trpc/lambda.handler",
       "GET /simple/{proxy+}": "packages/functions/src/simple.handler",
       "POST /simple/{proxy+}": "packages/functions/src/simple.handler",
     },

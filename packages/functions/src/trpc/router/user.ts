@@ -1,10 +1,10 @@
-import { router, publicProcedure } from "../root";
 import { z } from "zod";
+import { publicProcedur, router } from "../utils";
 
 export const userRouter = router({
-  hello: publicProcedure
+  hello: publicProcedur
     .input(z.object({ name: z.string() }))
     .query(({ input }) => {
-      return `Hello ${input.name}`;
+      return `Hello wesjan jembut ${input.name}`;
     }),
 });

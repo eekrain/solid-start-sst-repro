@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
 
 function Simple() {
-  const res = trpcSimple.userById.useQuery("1");
+  const res = trpcSimple.util.genRandom.useQuery({ num: 12312 });
 
   if (!res.data) return <div>Loading...</div>;
 
@@ -55,6 +55,7 @@ function App() {
       ],
     })
   );
+
   const [queryClientMulti] = useState(() => new QueryClient());
   const [trpcClientMulti] = useState(() =>
     trpcMulti.createClient({
