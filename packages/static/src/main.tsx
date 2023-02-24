@@ -12,9 +12,7 @@ export function Wrapper() {
     trpc.createClient({
       links: [
         httpBatchLink({
-          url:
-            `${import.meta.env.VITE_APP_API_URL}/trpc` ||
-            "http://localhost:3000/trpc",
+          url: import.meta.env.VITE_APP_API_URL || "http://localhost:3000/trpc",
         }),
       ],
     })

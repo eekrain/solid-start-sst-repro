@@ -1,13 +1,13 @@
 import { initTRPC } from "@trpc/server";
 import { awsLambdaRequestHandler } from "@trpc/server/adapters/aws-lambda";
-import { createContext } from "./context";
-import { appRouter } from "./router";
-import superjson from "superjson";
+import { appRouter } from "./router/_app";
 
-const t = initTRPC.create();
+export const t = initTRPC.create();
 
+export const middleware = t.middleware;
 export const router = t.router;
-export const baseProcedure = t.procedure;
+export const publicProcedure = t.procedure;
+export const mergeRouters = t.mergeRouters;
 
 export const handler = awsLambdaRequestHandler({
   router: appRouter,
