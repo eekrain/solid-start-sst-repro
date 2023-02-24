@@ -1,0 +1,18 @@
+{
+  "autorun": false,
+  "autokill": true,
+  "terminals": [
+    {
+      "name": "SST Root",
+      "focus": true
+    },
+    {
+      "name": "Frontend",
+      "cwd": "./packages/frontend"
+    },
+    {
+      "name": "Functions",
+      "cwd": "./packages/functions"
+    }
+  ]
+}
