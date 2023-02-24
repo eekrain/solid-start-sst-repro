@@ -2,9 +2,9 @@ import { router } from "../root";
 import { userRouter } from "./user";
 import { postRouter } from "./post";
 
-export const appRouter = router({
+export const multiRouter = router({
   user: userRouter,
   post: postRouter,
 });
 
-export type AppRouter = typeof appRouter;
+export type MultiRouter = typeof multiRouter;

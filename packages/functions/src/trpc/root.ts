@@ -1,6 +1,6 @@
 import { initTRPC } from "@trpc/server";
 import { awsLambdaRequestHandler } from "@trpc/server/adapters/aws-lambda";
-import { appRouter } from "./router/_app";
+import { multiRouter } from "./router/_app";
 
 export const t = initTRPC.create();
 
@@ -10,5 +10,5 @@ export const publicProcedure = t.procedure;
 export const mergeRouters = t.mergeRouters;
 
 export const handler = awsLambdaRequestHandler({
-  router: appRouter,
+  router: multiRouter,
 });

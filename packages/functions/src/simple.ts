@@ -15,7 +15,7 @@ const userList: User[] = [
   },
 ];
 
-const appRouter = t.router({
+const simpleRouter = t.router({
   userById: t.procedure
     // The input is unknown at this time.
     // A client could have sent us anything
@@ -40,8 +40,8 @@ const appRouter = t.router({
 
 // Export type router type signature,
 // NOT the router itself.
-export type AppRouter = typeof appRouter;
+export type SimpleRouter = typeof simpleRouter;
 
 export const handler = awsLambdaRequestHandler({
-  router: appRouter,
+  router: simpleRouter,
 });
