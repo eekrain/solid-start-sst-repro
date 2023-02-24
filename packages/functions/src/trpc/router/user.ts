@@ -5,6 +5,6 @@ export const userRouter = router({
   hello: publicProcedur
     .input(z.object({ name: z.string() }))
     .query(({ input }) => {
-      return `Hello wesjan jembut ${input.name}`;
+      return `Hello there ${input.name}`;
     }),
 });

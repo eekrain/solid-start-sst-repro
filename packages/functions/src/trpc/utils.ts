@@ -7,4 +7,4 @@ export const publicProcedur = t.procedure;
 
 // Export type router type signature,
 // NOT the router itself.
-export type MultiRouter = typeof multiRouter;
+export type MyRouter = typeof multiRouter;
