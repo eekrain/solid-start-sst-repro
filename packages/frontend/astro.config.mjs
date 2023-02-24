@@ -9,6 +9,6 @@ import aws from "astro-sst/lambda";
 export default defineConfig({
   output: "server",
   adapter: aws(),
-  // site: "https://example.com",
+  site: "https://example.com",
   integrations: [mdx(), sitemap()],
 });

@@ -33,11 +33,13 @@ importers:
       '@astrojs/rss': ^2.1.1
       '@astrojs/sitemap': ^1.1.0
       astro: ^2.0.15
+      astro-sst: ^2.0.36
     dependencies:
-      '@astrojs/mdx': 0.17.2_astro@2.0.15
+      '@astrojs/mdx': 0.17.2_astro@2.0.15+rollup@3.17.2
       '@astrojs/rss': 2.1.1
       '@astrojs/sitemap': 1.1.0
       astro: 2.0.15
+      astro-sst: 2.0.36
 
   packages/functions:
     specifiers:
@@ -108,14 +110,14 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx/0.17.2_astro@2.0.15:
+  /@astrojs/mdx/0.17.2_astro@2.0.15+rollup@3.17.2:
     resolution: {integrity: sha512-mol57cw1jJMcQgKMRGn7p6cewajq6JTNtqj5aAZgROWam/phVDSOCbXj/WU3O9+3qFnyKtpczoufQKwJTQltAw==}
     engines: {node: '>=16.12.0'}
     dependencies:
       '@astrojs/markdown-remark': 2.0.1_astro@2.0.15
       '@astrojs/prism': 2.0.0
       '@mdx-js/mdx': 2.3.0
-      '@mdx-js/rollup': 2.3.0
+      '@mdx-js/rollup': 2.3.0_rollup@3.17.2
       acorn: 8.8.2
       es-module-lexer: 1.2.0
       estree-util-visit: 1.2.1
@@ -249,9 +251,11 @@ packages:
       string-width: 4.2.3
       table: 6.8.1
 
-  /@aws-cdk/cx-api/2.62.2:
+  /@aws-cdk/cx-api/2.62.2_nodar2w6kpyag25oumcbwumkbq:
     resolution: {integrity: sha512-RA3lSK3I5y1Nr2f1BBZgovTT0Vx8T9kz4tcbBln7efan+sZX7WEAIUkwSY+Vi5n8kZN8D62yhtJ0UVGO9OYB3w==}
     engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      '@aws-cdk/cloud-assembly-schema': 2.62.2
     dependencies:
       '@aws-cdk/cloud-assembly-schema': 2.62.2
       semver: 7.3.8
@@ -2302,13 +2306,14 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/rollup/2.3.0:
+  /@mdx-js/rollup/2.3.0_rollup@3.17.2:
     resolution: {integrity: sha512-wLvRfJS/M4UmdqTd+WoaySEE7q4BIejYf1xAHXYvtT1du/1Tl/z2450Gg2+Hu7fh05KwRRiehiTP9Yc/Dtn0fA==}
     peerDependencies:
       rollup: '>=2'
     dependencies:
       '@mdx-js/mdx': 2.3.0
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.0.2_rollup@3.17.2
+      rollup: 3.17.2
       source-map: 0.7.4
       vfile: 5.3.7
     transitivePeerDependencies:
@@ -2348,7 +2353,7 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@rollup/pluginutils/5.0.2:
+  /@rollup/pluginutils/5.0.2_rollup@3.17.2:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -2360,6 +2365,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
+      rollup: 3.17.2
     dev: false
 
   /@trpc/server/9.16.0:
@@ -2581,8 +2587,10 @@ packages:
     resolution: {integrity: sha512-x0HvcHqVJNTPk/Bw8JbLWlWoo6Wwnsug0fnYYro1HBrjxZ3G7/AZk7Ahv8JwDe1uIcz8eBqvu86FuF1POiG7vQ==}
     engines: {node: '>=6.0'}
 
-  /ajv-formats/2.1.1:
+  /ajv-formats/2.1.1_ajv@8.12.0:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
+    peerDependencies:
+      ajv: ^8.0.0
     peerDependenciesMeta:
       ajv:
         optional: true
@@ -2721,6 +2729,12 @@ packages:
   /astring/1.8.4:
     resolution: {integrity: sha512-97a+l2LBU3Op3bBQEff79i/E4jMD2ZLFD8rHx9B6mXyB2uQwhJQYfiDqUwtfjF4QA1F2qs//N6Cw8LetMbQjcw==}
     hasBin: true
+    dev: false
+
+  /astro-sst/2.0.36:
+    resolution: {integrity: sha512-rQ6Iaikhf1I07Vtkak5QdvRID/23nBZ42o1PFQnr7/RSpyRr0WtsBNwbbOLiPy0f+3pBy/UmeO6fdwrkYJZ0/A==}
+    dependencies:
+      '@astrojs/webapi': 2.0.1
     dev: false
 
   /astro/2.0.15:
@@ -3108,7 +3122,7 @@ packages:
     hasBin: true
     dependencies:
       '@aws-cdk/cloud-assembly-schema': 2.62.2
-      '@aws-cdk/cx-api': 2.62.2
+      '@aws-cdk/cx-api': 2.62.2_nodar2w6kpyag25oumcbwumkbq
       archiver: 5.3.1
       aws-sdk: 2.1252.0
       glob: 7.2.3
@@ -3363,7 +3377,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       ajv: 8.12.0
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1_ajv@8.12.0
       atomically: 1.7.0
       debounce-fn: 4.0.0
       dot-prop: 6.0.1
@@ -6473,7 +6487,7 @@ packages:
       '@aws-cdk/aws-apigatewayv2-integrations-alpha': 2.62.2-alpha.0_3y6ce3zap7bex36i7p46op7pcq
       '@aws-cdk/cloud-assembly-schema': 2.62.2
       '@aws-cdk/cloudformation-diff': 2.62.2
-      '@aws-cdk/cx-api': 2.62.2
+      '@aws-cdk/cx-api': 2.62.2_nodar2w6kpyag25oumcbwumkbq
       '@aws-cdk/region-info': 2.62.2
       '@aws-sdk/client-api-gateway': 3.208.0
       '@aws-sdk/client-cloudformation': 3.208.0

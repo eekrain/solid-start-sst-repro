@@ -6,10 +6,10 @@ export default {
   config(_input) {
     return {
       name: "personal-branding",
-      region: "us-east-1",
+      region: "ap-southeast-1",
     };
   },
   stacks(app) {
     app.stack(API);
   },
-} satisfies SSTConfig;
+} as SSTConfig;

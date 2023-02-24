@@ -9,11 +9,10 @@ export function API({ stack }: StackContext) {
 
   const site = new AstroSite(stack, "Site", {
     path: "packages/frontend",
-    edge: true,
   });
 
   stack.addOutputs({
     ApiEndpoint: api.url,
-    SiteURL: site.url as string,
+    SiteURL: site.url || "localhost",
   });
 }
