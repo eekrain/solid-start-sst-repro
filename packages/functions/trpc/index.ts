@@ -11,5 +11,4 @@ export const baseProcedure = t.procedure;
 
 export const handler = awsLambdaRequestHandler({
   router: appRouter,
-  createContext,
 });
