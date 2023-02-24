@@ -1,5 +1,6 @@
 {
-  "name": "frontend",
+  "name": "@personal-branding/frontend",
+  "version": "0.0.0",
   "scripts": {
     "dev": "sst env solid-start dev",
     "build": "solid-start build",
@@ -13,14 +14,16 @@
     "solid-start-node": "^0.2.19",
     "solid-start-sst": "^2.0.36",
     "typescript": "^4.9.4",
-    "vite": "^3.2.5"
+    "vite": "^3.2.5",
+    "sst": "^2.0.36"
   },
   "dependencies": {
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.7.0",
     "solid-js": "^1.6.11",
     "solid-start": "^0.2.21",
-    "undici": "^5.15.1"
+    "undici": "^5.15.1",
+    "sst": "^2.0.36"
   },
   "engines": {
     "node": ">=16.8"
