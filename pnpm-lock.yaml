@@ -43,11 +43,15 @@ importers:
 
   packages/functions:
     specifiers:
+      '@trpc/server': ^10.12.0
       '@types/aws-lambda': ^8.10.111
       '@types/node': ^18.14.1
       sst: ^2.0.36
+      zod: ^3.20.6
     dependencies:
+      '@trpc/server': 10.12.0
       sst: 2.0.36
+      zod: 3.20.6
     devDependencies:
       '@types/aws-lambda': 8.10.111
       '@types/node': 18.14.1
@@ -2366,6 +2370,10 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
       rollup: 3.17.2
+    dev: false
+
+  /@trpc/server/10.12.0:
+    resolution: {integrity: sha512-gD5FCNCIDgx1fuYbCfFQgIYT1HVUzsXtQUrvG+nTLBL19eWJctwHetWYB2b71NmfLvq/b+QSH1OzPq1WvsHeag==}
     dev: false
 
   /@trpc/server/9.16.0:
