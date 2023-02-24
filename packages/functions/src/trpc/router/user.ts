@@ -14,20 +14,12 @@ const userList: User[] = [
 ];
 
 export const userRouter = router({
-  userById: baseProcedure
+  hi: baseProcedure
     // The input is unknown at this time.
     // A client could have sent us anything
     // so we won't assume a certain data type.
-    .input(
-      z.object({
-        id: z.string().min(1),
-      })
-    )
-    .query((req) => {
-      const { input } = req;
-
-      const user = userList.find((u) => u.id === input.id);
-
-      return user;
+    .input(z.string().min(1))
+    .query(({ input, ctx }) => {
+      return { message: `Hi, ${input}` };
     }),
 });

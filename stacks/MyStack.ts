@@ -7,10 +7,14 @@ export function API({ stack }: StackContext) {
       "GET /trpc/{proxy+}": "packages/functions/src/trpc/index.handler",
       "POST /trpc/{proxy+}": "packages/functions/src/trpc/index.handler",
     },
+    cors: true,
   });
 
   const site = new AstroSite(stack, "Site", {
     path: "packages/frontend",
+    environment: {
+      PUBLIC_API_URL: api.url,
+    },
   });
 
   stack.addOutputs({
