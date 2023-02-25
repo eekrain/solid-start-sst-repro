@@ -6,9 +6,12 @@ import aws from "astro-sst/lambda";
 // https://astro.build/config
 
 // https://astro.build/config
+import tailwind from "@astrojs/tailwind";
+
+// https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: aws(),
   site: "https://example.com",
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), tailwind()],
 });

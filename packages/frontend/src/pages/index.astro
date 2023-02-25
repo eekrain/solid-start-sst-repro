@@ -6,7 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { trpcVanillaClient } from '../utils/trpc';
 
 // const tes = await trpcVanillaClient.user.hello.query({name: "Kontol"})
-const tes = await trpcVanillaClient.userById.query("1")
+const tes = await trpcVanillaClient.user.hello.query({name: "Ardian"})
 console.log("🚀 ~ file: index.astro:9 ~ tes:", tes)
 
 ---
@@ -19,7 +19,7 @@ console.log("🚀 ~ file: index.astro:9 ~ tes:", tes)
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
+			<h1 class="font-medium text-3xl text-blue-600">🧑‍🚀 Hello, Astronaut!</h1>
 			<p>
 				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
 				template serves as a lightweight, minimally-styled starting point for anyone looking to build
