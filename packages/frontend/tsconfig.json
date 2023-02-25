@@ -4,8 +4,14 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@personal-branding/core/*": ["../core/src/*"],
-      "@personal-branding/functions/*": ["../functions/src/*"]
-    }
+      "@personal-branding/core/*": [
+        "../core/src/*"
+      ],
+      "@personal-branding/functions/*": [
+        "../functions/src/*"
+      ]
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   }
 }

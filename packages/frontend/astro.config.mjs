@@ -9,9 +9,12 @@ import aws from "astro-sst/lambda";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
+import solidJs from "@astrojs/solid-js";
+
+// https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: aws(),
-  site: "https://example.com",
-  integrations: [mdx(), sitemap(), tailwind()],
+  site: "http://local.mydomain.com:3000/",
+  integrations: [mdx(), sitemap(), tailwind(), solidJs()]
 });
