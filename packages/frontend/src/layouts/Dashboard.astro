@@ -1,5 +1,5 @@
 ---
-import Navbar from "src/components/Dashboard/Navbar.astro";
+import Navbar from "src/components/Dashboard/Navbar";
 ---
 
 <html lang="en">
@@ -8,6 +8,6 @@ import Navbar from "src/components/Dashboard/Navbar.astro";
 	</head>
 
 	<body>
-    <Navbar />
+    <Navbar client:idle />
 	</body>
 </html>

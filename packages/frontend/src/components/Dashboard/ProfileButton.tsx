@@ -6,10 +6,9 @@ const ProfileButton: Component<{}> = (props) => {
   return (
     <div class="relative inline-block">
       <button
-        class="flex items-center rounded-lg border-2 px-4 py-2 hover:border-transparent hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-cyan-200 "
+        class="flex items-center rounded-lg border-2 border-gray-300 px-4 py-2 hover:bg-gray-100 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-blue-400 dark:focus:ring-opacity-40"
         classList={{
-          "border-gray-300": !open(),
-          "bg-cyan-700 text-white border-transparent": open(),
+          "bg-gray-100": open(),
         }}
         type="button"
         onClick={() => setOpen((prev) => !prev)}
