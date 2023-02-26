@@ -3,7 +3,7 @@ import Api from "./Api";
 
 const Auth = ({ stack }: StackContext) => {
   const api = use(Api);
-  const auth = new SSTAuth(stack, "auth", {
+  const auth = new SSTAuth(stack, "MyAuth", {
     authenticator: {
       handler: "packages/functions/src/auth.handler",
     },

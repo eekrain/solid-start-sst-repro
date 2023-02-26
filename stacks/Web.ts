@@ -3,7 +3,7 @@ import Api from "./Api";
 
 const Web = ({ stack }: StackContext) => {
   const api = use(Api);
-  const astro = new AstroSite(stack, "Site", {
+  const astro = new AstroSite(stack, "MySite", {
     path: "packages/frontend",
     environment: {
       PUBLIC_API_URL: `${api.url}`,

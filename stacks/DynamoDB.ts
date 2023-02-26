@@ -1,7 +1,7 @@
 import { StackContext, Table } from "sst/constructs";
 
 const DynamoDB = ({ stack }: StackContext) => {
-  const table = new Table(stack, "table", {
+  const table = new Table(stack, "MyTable", {
     fields: {
       pk: "string",
       sk: "string",
