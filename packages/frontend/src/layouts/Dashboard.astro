@@ -1,5 +1,6 @@
 ---
 import Navbar from "src/components/Dashboard/Navbar";
+import Sidebar from "src/components/Dashboard/Sidebar";
 ---
 
 <html lang="en">
@@ -7,7 +8,10 @@ import Navbar from "src/components/Dashboard/Navbar";
 		<!-- <BaseHead title={title} description={description} /> -->
 	</head>
 
-	<body>
-    <Navbar client:idle />
+	<body class="bg-gray-50">
+    <Navbar client:load />
+    <div class="flex overflow-hidden bg-white pt-16">
+      <Sidebar client:load />
+    </div>
 	</body>
 </html>
