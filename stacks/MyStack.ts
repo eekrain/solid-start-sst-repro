@@ -1,4 +1,4 @@
-import { StackContext, Api, AstroSite, StaticSite } from "sst/constructs";
+import { StackContext, Api, AstroSite, Auth } from "sst/constructs";
 
 export function API({ stack }: StackContext) {
   const api = new Api(stack, "api", {
@@ -10,14 +10,14 @@ export function API({ stack }: StackContext) {
     cors: true,
   });
 
-  const react = new StaticSite(stack, "react", {
-    path: "packages/static",
-    buildOutput: "dist",
-    buildCommand: "pnpm build",
-    environment: {
-      // Pass in the API endpoint to our app
-      VITE_APP_API_URL: `${api.url}`,
+  const auth = new Auth(stack, "auth", {
+    authenticator: {
+      handler: "functions/auth.handler",
     },
+  });
+  auth.attach(stack, {
+    api,
+    prefix: "/auth",
   });
 
   const astro = new AstroSite(stack, "Site", {
@@ -29,7 +29,6 @@ export function API({ stack }: StackContext) {
 
   stack.addOutputs({
     ApiEndpoint: api.url,
-    ReactURL: react.url || "localhost",
     AstroURL: astro.url || "localhost",
   });
 }
