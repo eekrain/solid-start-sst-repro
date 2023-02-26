@@ -1,6 +1,9 @@
 // @ts-ignore
 import { SSTConfig } from "sst";
-import { API } from "./stacks/MyStack";
+import Api from "./stacks/Api";
+import Auth from "./stacks/Auth";
+import DynamoDB from "./stacks/DynamoDB";
+import Web from "./stacks/Web";
 
 export default {
   config(_input) {
@@ -10,6 +13,9 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(API);
+    app.stack(DynamoDB);
+    app.stack(Auth);
+    app.stack(Api);
+    app.stack(Web);
   },
 } as SSTConfig;
